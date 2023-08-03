@@ -85,9 +85,9 @@ export default function Accounts() {
                                 ))}
                             </tbody>
                         </table>
-                            <button className='btn' onClick={() => navigate('/addaccounts')}>
-                                Add New
-                            </button>
+                        <button className='btn' onClick={() => navigate('/addaccounts')}>
+                            Add New
+                        </button>
                     </div>
                 </div>
             </Style>

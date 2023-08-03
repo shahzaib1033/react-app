@@ -67,6 +67,7 @@ const ProductForm = () => {
                     setSubcategoryName(response?.data?.data?.subcategory.name)
                     setDescription(response?.data?.data?.description)
                     setImagePath(response?.data?.data?.productImage)
+                    console.log(response?.data?.data?.productImage)
                    setImage( `http://localhost:8080${response?.data?.data?.productImage}`);
                     // console.log(image)
                     // setProductImage(image)

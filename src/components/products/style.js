@@ -11,6 +11,7 @@ export const Style = styled.div`
     align-items: center;
     color:white;
     gap:50px;
+  
 }
 .mainbody{
     width :100%;
@@ -107,7 +108,8 @@ th {
 
 /* Variant Modal Styles */
 /* Variant Modal Styles */
-.modal  {
+
+.modal {
     display: flex; 
   justify-content: center;
   flex-direction:row;

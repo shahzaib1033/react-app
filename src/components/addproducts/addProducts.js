@@ -124,37 +124,14 @@ const ProductForm = () => {
         try {
             const response = await axios.post('http://localhost:8080/user/profile/uploadImage', formData);
             const productImage = response.data.imagepath;
-            imagePath = response.data.data;
+            setImagePath(response.data.data);
             setProductImage(productImage);
-            setImagePath(imagePath)
-            // console.log(imagePath)
+            console.log(productImage)
         } catch (error) {
             console.error('Error uploading image:', error);
         }
     };
-    const handleUpdate = async (e) => {
-        e.preventDefault();
-        const data = { productName, description, category, subcategory, imagePath, variants };
-        console.log(data);
-        try {
-            const response = await axios.post('http://localhost:8080/admin/add/updateproducts', data, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'application/json', // You can include other headers as needed
-                },
-            });
-            if (response.data.success) {
-                alert('The product was successfully updated.');
-                // console.log(response.data.success)
-                navigate('/products')
 
-            } else {
-                alert('Failed to update the product.');
-            }
-        } catch (error) {
-            console.error('Error adding product:', error);
-        }
-    };
     const handleSubmit = async (e) => {
         // e.preventDefault();
         debugger
@@ -265,7 +242,7 @@ const ProductForm = () => {
                                                 <label htmlFor="skuQuantity">Quantity:</label>
                                                 <input className='input' type="number" id="skuQuantity" value={sku.quantity} onChange={(e) => handleSKUChange(variantIndex, skuIndex, 'quantity', e.target.value)} required /><br />
 
-                                                
+
 
                                                 {sku.color && (
                                                     <button className='btn' onClick={() => handleOpenModal(variant)}>View Sizes & Quantities</button>
